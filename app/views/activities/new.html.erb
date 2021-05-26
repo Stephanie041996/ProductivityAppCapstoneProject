@@ -1,4 +1,11 @@
 <h2>NEW ACTIVITIE</h2>
+
+<%= form_with model: @activitie  do |f| %>
+
+    <%= f.text_field :name, placeholder: 'Gift Name', class: 'w-100' %><br/><br/>
+    <%= f.text_field :amount, placeholder: 'Price', class: 'w-100' %>
+    <%= f.submit class: 'btn btn-lg btn-primary w-100 mt-4' %>
+<% end %>
  <div class="create-group">
         <%= link_to 'Add Gift', activities_path, class: 'button'  %>
     </div>

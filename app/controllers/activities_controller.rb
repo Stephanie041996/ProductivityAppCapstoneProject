@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-
+    before_action :logged_in_user
   # GET /posts or /posts.json
   def index
     @activities = Activitie.all
@@ -8,11 +8,11 @@ class ActivitiesController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @activitie = Activitie.find(params[:id])
- end
+  end
 
   # GET /posts/new
   def new
-    @activitie = Activitie.new
+    @activitie = current_user.activities.build
   end
 
   # GET /posts/1/edit
@@ -22,7 +22,7 @@ class ActivitiesController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @activitie = Activitie.new(activities_params)
+    @activitie = current_user.activities.build(activities_params)
 
     if @activities.save
     flash[:success] = "successfully saved"
