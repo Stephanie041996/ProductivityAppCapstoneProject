@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ActivitiesControllerTest < ActionDispatch::IntegrationTest
+class ActivitieTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
